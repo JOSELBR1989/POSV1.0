@@ -19,18 +19,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="compras")
+@Table(name="compra")
 public class Compra implements Serializable  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idCompra")
+    @Column(name="id_compra")
     private Long idCompra;
     
-    @Column(name="numeroDocumento")
+    @Column(name="numero_documento")
     private Long numeroDocumento;
     
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="codigoProveedor")
+    @JoinColumn(name="codigo_proveedor")
     private Proveedor proveedor;
     
     @Column(name="fecha")

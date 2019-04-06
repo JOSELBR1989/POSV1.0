@@ -9,26 +9,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="proveedores")
+@Table(name="proveedor")
 public class Proveedor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="codigoProveedor")
+    @Column(name="codigo_proveedor")
     private Long codigoProveedor;
         
     @Column(name="nit")
     private String nit;
     
-    @Column(name="razonSocial")
+    @Column(name="razon_social")
     private String razonSocial;
     
     @Column(name="direccion")
     private String direccion;
     
-    @Column(name="paginaWeb")
+    @Column(name="pagina_web")
     private String paginaWeb;
     
-    @Column(name="contactoPrincipal")
+    @Column(name="contacto_principal")
     private String contactoPrincipal;
 
     public Proveedor() {
