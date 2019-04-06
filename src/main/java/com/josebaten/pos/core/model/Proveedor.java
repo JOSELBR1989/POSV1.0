@@ -6,29 +6,37 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="proveedor")
+@Table(name = "proveedor")
+@NamedQueries({
+    @NamedQuery(name = "Proveedor.findAll", query = "select p from Proveedor p"),
+    @NamedQuery(name = "Proveedor.findAllOrderByNit", query = "select p from Proveedor p order by p.nit"),
+    @NamedQuery(name = "Proveedor.findByCodigoProveedor", query = "select p from Proveedor p where p.codigoProveedor = ?1")// metodo de prueba
+})
 public class Proveedor implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="codigo_proveedor")
+    @Column(name = "codigo_proveedor")
     private Long codigoProveedor;
-        
-    @Column(name="nit")
+
+    @Column(name = "nit")
     private String nit;
-    
-    @Column(name="razon_social")
+
+    @Column(name = "razon_social")
     private String razonSocial;
-    
-    @Column(name="direccion")
+
+    @Column(name = "direccion")
     private String direccion;
-    
-    @Column(name="pagina_web")
+
+    @Column(name = "pagina_web")
     private String paginaWeb;
-    
-    @Column(name="contacto_principal")
+
+    @Column(name = "contacto_principal")
     private String contactoPrincipal;
 
     public Proveedor() {
@@ -90,9 +98,5 @@ public class Proveedor implements Serializable {
     public void setContactoPrincipal(String contactoPrincipal) {
         this.contactoPrincipal = contactoPrincipal;
     }
-    
-    
-    
-    
-    
+
 }

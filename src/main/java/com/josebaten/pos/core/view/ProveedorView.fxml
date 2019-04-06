@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.josebaten.pos.core.controller.ProveedorController">
+   <children>
+      <TableView fx:id="tblProveedor" layoutX="12.0" layoutY="175.0" prefHeight="260.0" prefWidth="752.0">
+        <columns>
+          <TableColumn prefWidth="99.0" text="NIT" />
+          <TableColumn prefWidth="188.0" text="Razon Social" />
+            <TableColumn prefWidth="205.0" text="Direccion" />
+            <TableColumn minWidth="0.0" prefWidth="141.0" text="Pagina web" />
+            <TableColumn prefWidth="118.0" text="Contacto" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="6.0" layoutY="9.0" prefHeight="20.0" prefWidth="752.0" text="Crear Proveedores" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
