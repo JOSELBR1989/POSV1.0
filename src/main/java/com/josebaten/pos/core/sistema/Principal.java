@@ -30,7 +30,7 @@ public class Principal extends Application {
 
     public void mostrarVentanaPrincipal() throws IOException{
         VentanaPrincipalController main = (VentanaPrincipalController) cambiarEscena("VentanaPrincipalView.fxml",800,600);
-        main.setPrincipal(this);
+//        main.setPrincipal(this);
     }
     
     public void mostrarVentanaProveedores()throws IOException{
