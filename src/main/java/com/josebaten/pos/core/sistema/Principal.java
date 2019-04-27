@@ -6,11 +6,14 @@ import com.josebaten.pos.core.controller.VentanaPrincipalController;
 
 import static javafx.application.Application.launch;
 import java.io.IOException;
+import java.io.InputStream;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
@@ -30,28 +33,59 @@ public class Principal extends Application {
 
     public void mostrarVentanaPrincipal() throws IOException{
         VentanaPrincipalController main = (VentanaPrincipalController) cambiarEscena("VentanaPrincipalView.fxml",800,600);
-//        main.setPrincipal(this);
+        main.setPrincipal(this);
     }
     
     public void mostrarVentanaProveedores()throws IOException{
+        try
+        {
         ProveedorController proveedorController = (ProveedorController)cambiarEscena("ProveedorView.fxml",776,449);
         proveedorController.setVentanaPrincipalController(this);
+        }
+        catch(IOException  ex)
+        {
+            ex.printStackTrace();
+        }
+        
     }
     
     public Initializable cambiarEscena(String fxml, int ancho, int alto) throws IOException{
+//        Initializable resultado = null;
+//        
+//        FXMLLoader loader = new FXMLLoader();
+//        Parent root = loader.load(getClass().getResource(PAQUETE_VISTA.concat(fxml) ));
+//        Scene escena = new Scene(root, ancho,alto);
+//        escena.getStylesheets().add("/styles/Styles.css");
+//        
+//        this.escenarioPrincipal.setScene(escena);
+//        this.escenarioPrincipal.sizeToScene();        
+//        
+//        resultado= (Initializable)loader.getController();
+         
+        //cargador del archivo FXML
         Initializable resultado = null;
+        //Cargador del archivo FXML.
+        FXMLLoader cargadorFXML = new FXMLLoader();
+        //Asignacion del archivo logico
+        InputStream archivo = Principal.class.getResourceAsStream(PAQUETE_VISTA + fxml);
         
-        FXMLLoader loader = new FXMLLoader();
-        Parent root = loader.load(getClass().getResource(PAQUETE_VISTA.concat(fxml) ));
-        Scene escena = new Scene(root, ancho,alto);
-        escena.getStylesheets().add("/styles/Styles.css");
+        ///cARGADOR DE FABRICAR PARA CARGAR ARCHIVO FXML
+        cargadorFXML.setBuilderFactory(new JavaFXBuilderFactory());
         
-
+        //Direccion de la ruta del archivo FXML.
+        cargadorFXML.setLocation(Principal.class.getResource(PAQUETE_VISTA + fxml));
+        
+        System.out.println(archivo);
+        //creacion de la escena
+        Scene escena = new Scene((AnchorPane)cargadorFXML.load(archivo),ancho,alto);
+        
+        //Asignacion de la escena en el escenario principal
         this.escenarioPrincipal.setScene(escena);
+        //Ajustar el tama;o del escenario a la escena
         this.escenarioPrincipal.sizeToScene();
-        
-        resultado= (Initializable)loader.getController();
-        
+        System.out.println(escena);
+        //retornar el objeto initializable del cargador
+        resultado = (Initializable)cargadorFXML.getController();
         
         return resultado;
     }
