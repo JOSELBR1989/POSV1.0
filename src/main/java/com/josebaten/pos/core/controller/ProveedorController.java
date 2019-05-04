@@ -24,11 +24,13 @@ public class ProveedorController implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        proveedorService.findAllProveedor();
+//        proveedorService.findAllProveedor();
         
 //        lista = FXCollections.observableArrayList(proveedorService.findAllProveedor());
 //        this.tblProveedor.setItems(lista);
     }
+    
+    
     public void setVentanaPrincipalController(Principal principal){
         this.principal = principal;
     }

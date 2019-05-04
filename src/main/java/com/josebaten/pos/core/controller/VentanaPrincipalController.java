@@ -34,4 +34,10 @@ public class VentanaPrincipalController implements Initializable {
     {
         this.principal.mostrarVentanaProveedores();
     }
+
+    public void mostrarVentanaCompras() throws IOException
+    {
+        this.principal.mostrarVentanaCompras();
+    }
+
 }

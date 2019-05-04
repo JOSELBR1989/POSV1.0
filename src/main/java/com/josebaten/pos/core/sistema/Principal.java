@@ -1,5 +1,6 @@
 package com.josebaten.pos.core.sistema;
 
+import com.josebaten.pos.core.controller.CompraController;
 import com.josebaten.pos.core.controller.ProveedorController;
 import com.josebaten.pos.core.controller.VentanaPrincipalController;
 
@@ -48,6 +49,20 @@ public class Principal extends Application {
         }
         
     }
+
+    public void mostrarVentanaCompras()throws IOException{
+        try
+        {
+            CompraController compraController = (CompraController)cambiarEscena("CompraView.fxml",600,400);
+            compraController.setVentanaPrincipalController(this);
+        }
+        catch(IOException  ex)
+        {
+            ex.printStackTrace();
+        }
+        
+    }
+
     
     public Initializable cambiarEscena(String fxml, int ancho, int alto) throws IOException{
 //        Initializable resultado = null;

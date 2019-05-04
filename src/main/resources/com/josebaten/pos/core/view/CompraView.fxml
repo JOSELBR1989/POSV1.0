@@ -8,14 +8,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.josebaten.pos.core.controller.CompraController">
    <children>
-      <TableView layoutX="14.0" layoutY="153.0" prefHeight="168.0" prefWidth="569.0">
+      <TableView fx:id="tblCompra" layoutX="14.0" layoutY="153.0" prefHeight="168.0" prefWidth="569.0">
         <columns>
           <TableColumn prefWidth="63.0" text="ID" />
           <TableColumn prefWidth="125.0" text="# Documento" />
-            <TableColumn prefWidth="318.0" text="Proveedor" />
+            <TableColumn fx:id="tblCompra" prefWidth="318.0" text="Proveedor" />
             <TableColumn minWidth="0.0" prefWidth="62.0" text="Total" />
         </columns>
       </TableView>
@@ -25,9 +24,10 @@
       <TextField layoutX="174.0" layoutY="26.0" />
       <DatePicker layoutX="174.0" layoutY="62.0" prefHeight="25.0" prefWidth="149.0" />
       <TextField layoutX="174.0" layoutY="99.0" />
-      <Button alignment="CENTER" layoutX="143.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Nuevo" />
-      <Button alignment="CENTER" layoutX="230.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Eliminar" />
-      <Button alignment="CENTER" layoutX="317.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Proveedor" />
-      <Button alignment="CENTER" layoutX="404.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Imprimir" />
+      <Button alignment="CENTER" layoutX="95.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Nuevo" />
+      <Button alignment="CENTER" layoutX="182.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Eliminar" />
+      <Button alignment="CENTER" layoutX="269.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Proveedor" />
+      <Button alignment="CENTER" layoutX="356.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Imprimir" />
+      <Button alignment="CENTER" layoutX="444.0" layoutY="355.0" mnemonicParsing="false" onAction="#regresarVentanaPrincipal" prefHeight="25.0" prefWidth="85.0" text="Regresar" />
    </children>
 </AnchorPane>
