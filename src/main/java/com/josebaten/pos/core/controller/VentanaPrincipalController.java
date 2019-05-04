@@ -39,5 +39,10 @@ public class VentanaPrincipalController implements Initializable {
     {
         this.principal.mostrarVentanaCompras();
     }
+    
+    public void cerrarAplicacion()
+    {
+        System.exit(0);
+    }
 
 }

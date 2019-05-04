@@ -22,7 +22,7 @@ public class CompraController implements Initializable {
     private final CompraService compraService = new CompraServiceImpl();
     private ObservableList<Compra> lista;    
     private Principal principals;
-//    @FXML private TableView tblCompra;
+    @FXML private TableView tblCompra;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

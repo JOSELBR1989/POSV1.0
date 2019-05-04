@@ -14,7 +14,7 @@
         <columns>
           <TableColumn prefWidth="63.0" text="ID" />
           <TableColumn prefWidth="125.0" text="# Documento" />
-            <TableColumn fx:id="tblCompra" prefWidth="318.0" text="Proveedor" />
+            <TableColumn prefWidth="318.0" text="Proveedor" />
             <TableColumn minWidth="0.0" prefWidth="62.0" text="Total" />
         </columns>
       </TableView>
