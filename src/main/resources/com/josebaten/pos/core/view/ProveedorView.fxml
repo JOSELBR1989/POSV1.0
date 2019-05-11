@@ -24,17 +24,21 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#regresarVentanaPrincipal" prefHeight="25.0" prefWidth="145.0" text="Regresar" />
-      <Button layoutX="678.0" layoutY="172.0" mnemonicParsing="false" onAction="#nuevo" text="Guardar" />
+      <Button fx:id="btnGuardar" disable="true" layoutX="165.0" layoutY="410.0" mnemonicParsing="false" onAction="#Guardar" prefHeight="25.0" prefWidth="67.0" text="Guardar" />
       <Label layoutX="121.0" layoutY="61.0" text="Nit:" />
       <Label layoutX="79.0" layoutY="90.0" text="DIRECCION" />
       <Label layoutX="18.0" layoutY="118.0" text="CONTACTO PRINCIPAL" />
       <Label layoutX="57.0" layoutY="147.0" text="RAZON SOCIAL" />
       <Label layoutX="63.0" layoutY="176.0" text="PAGINA WEB" />
-      <TextField fx:id="txtNit" layoutX="149.0" layoutY="57.0" />
-      <TextField fx:id="txtDireccion" layoutX="149.0" layoutY="86.0" prefHeight="25.0" prefWidth="508.0" />
-      <TextField fx:id="txtContactoPrincipal" layoutX="149.0" layoutY="114.0" prefHeight="25.0" prefWidth="508.0" />
-      <TextField fx:id="txtRazonSocial" layoutX="149.0" layoutY="143.0" prefHeight="25.0" prefWidth="508.0" />
-      <TextField fx:id="txtPaginaWeb" layoutX="149.0" layoutY="172.0" prefHeight="25.0" prefWidth="508.0" />
+      <TextField fx:id="txtNit" editable="false" layoutX="149.0" layoutY="57.0" />
+      <TextField fx:id="txtDireccion" editable="false" layoutX="149.0" layoutY="86.0" prefHeight="25.0" prefWidth="508.0" />
+      <TextField fx:id="txtContactoPrincipal" editable="false" layoutX="149.0" layoutY="114.0" prefHeight="25.0" prefWidth="508.0" />
+      <TextField fx:id="txtRazonSocial" editable="false" layoutX="149.0" layoutY="143.0" prefHeight="25.0" prefWidth="508.0" />
+      <TextField fx:id="txtPaginaWeb" editable="false" layoutX="149.0" layoutY="172.0" prefHeight="25.0" prefWidth="508.0" />
+      <Button fx:id="btnNuevo" layoutX="88.0" layoutY="410.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="25.0" prefWidth="67.0" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="242.0" layoutY="410.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="25.0" prefWidth="67.0" text="Eliminar" />
+      <Button fx:id="btnReporte" layoutX="403.0" layoutY="410.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Reportes" />
+      <Button fx:id="btnModificar" layoutX="321.0" layoutY="410.0" mnemonicParsing="false" onAction="#modificar" text="Modificar" />
+      <Button fx:id="btnSalir" layoutX="479.0" layoutY="410.0" mnemonicParsing="false" onAction="#regresarVentanaPrincipal" prefHeight="25.0" prefWidth="71.0" text="Salir" />
    </children>
 </AnchorPane>
