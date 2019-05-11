@@ -4,6 +4,7 @@ import com.josebaten.pos.core.model.Proveedor;
 import com.josebaten.pos.core.service.ProveedorService;
 import com.josebaten.pos.core.service.ProveedorServiceImpl;
 import com.josebaten.pos.core.sistema.Principal;
+import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -65,6 +66,7 @@ public class ProveedorController implements Initializable {
         
         
         tblProveedor.getSelectionModel().selectedItemProperty().addListener(newSelection ->{seleccionar();});
+         
     }
     
     public void seleccionar()
@@ -102,7 +104,7 @@ public class ProveedorController implements Initializable {
         this.txtRazonSocial.setEditable(tipo);
         this.txtPaginaWeb.setEditable(tipo);
     }
-    
+
     public void modificar()
     {
         if(this.tblProveedor.getSelectionModel().getSelectedItem()!= null)

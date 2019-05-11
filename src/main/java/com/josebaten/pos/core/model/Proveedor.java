@@ -3,18 +3,19 @@ package com.josebaten.pos.core.model;
 
 import javafx.beans.property.StringProperty;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 import javafx.beans.property.LongProperty;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -38,6 +39,10 @@ public class Proveedor implements Serializable {
     private final StringProperty paginaWeb;
 
     private final StringProperty contactoPrincipal;
+    
+    @OneToMany(mappedBy="proveedor", fetch = FetchType.LAZY)
+    private Set<TelefonoProveedor> telefonosProveedor;
+    
 
     public Proveedor() {
         this.codigoProveedor = new SimpleLongProperty();
